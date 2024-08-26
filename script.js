@@ -1,59 +1,64 @@
 AOS.init();
 gsap.registerPlugin(ScrollTrigger);
 
+if(!matchMedia('(max-width: 768px)').matches){
 
-gsap.from(".scroll-animation" , {
-    scrollTrigger: {
+    const config = {
         trigger: ".scroll-animation",
-        // start: "top center",
-        // end: "bottom 60%",
-        scrub : true,
-        // markers: true,
-        pin:true,
+        scrub: true,
+        pin: true,
+        start: matchMedia("(max-width: 768px)").matches ? "top center" : "top top",
+        end: "+=1000",
+    };
+    
+    gsap.from(".scroll-animation img", {
+        scrollTrigger: config,
+        // clipPath: "polygon(20% 0%, 80% 0%, 100% 70%, 0 69%)",
+        y: -300,
+        rotateX: 50,
+        rotateY: 30, // Additional rotation for a 3D effect
+        translateZ: 100, // Adds depth to the animation
+        duration: 1,
+        opacity: 0.3,
+    });
+}
 
-        // toggleActions: "play none none none",
-        start:"top top",
-        end : "+=1000"
-    },
-    y: -300,
-    rotateX : 50,
-    duration: 1,
-    opacity: 0.2
- });
+if(matchMedia('(max-width: 768px)').matches){
+    document.querySelector('.main-heading').innerHTML = "Streamline Your GST Billing with ease"
+}
 
 let billingSection = document.querySelector(".section-3-main");
 
 let billingTexts = [
     {
-        text  : "Billing Management",
-        icon : "fa-check"
+        text: "Billing Management",
+        icon: "fa-check",
     },
     {
-        text : "Multi-Industry Support",
-        icon : "fa-check"
+        text: "Multi-Industry Support",
+        icon: "fa-check",
     },
     {
-        text : "Stock Management",
-        icon : "fa-check"
+        text: "Stock Management",
+        icon: "fa-check",
     },
     {
-        text : "GST Management",
-        icon : "fa-check"
+        text: "GST Management",
+        icon: "fa-check",
     },
     {
-        text : "Sales Analytics",
-        icon : "fa-check"
+        text: "Sales Analytics",
+        icon: "fa-check",
     },
     {
-        text : "Customer Management",
-        icon : "fa-check"
+        text: "Customer Management",
+        icon: "fa-check",
     },
     {
-        text : "Online Backup",
-        icon : "fa-check"
-    }
-]
-
+        text: "Online Backup",
+        icon: "fa-check",
+    },
+];
 
 billingTexts.forEach((item, index) => {
     let billingItem = document.createElement("div");
@@ -65,7 +70,7 @@ billingTexts.forEach((item, index) => {
         </div>
     `;
     billingSection.appendChild(billingItem);
-})
+});
 
 // gsap.from(".scroll-animation", {
 //     scrollTrigger : {
@@ -92,7 +97,6 @@ billingTexts.forEach((item, index) => {
 //     opacity: 0
 // })
 
-
 // let tl = gsap.timeline({
 //     scrollTrigger: {
 //         trigger: ".section-child",
@@ -109,4 +113,3 @@ billingTexts.forEach((item, index) => {
 //     duration: 1,
 //     opacity: 0
 // })
-

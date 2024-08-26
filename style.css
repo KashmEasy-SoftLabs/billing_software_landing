@@ -10,6 +10,7 @@ html{
 }
 
 :root{
+    --bg-footer: rgba(16, 8, 119, 0.56);
     --bg-primary : #07005B;
     --accent-color : #EBB700;
     --text-color : #fff;
@@ -128,10 +129,11 @@ li{
 
 .btn{
     background:var(--accent-color);
-    color:white;
+    color:var(--bg-primary);
     padding:0.5rem 1rem;
     border-radius:var(--radius);
     font-size:1.6rem;
+
     /* font-weight: 800; */
     display:inline-block;
     margin:auto;
@@ -198,20 +200,21 @@ transform: rotate(45deg);
     z-index:-111;
    /* / background:url("https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg"); */
 }
-
+/* 
 .scroll-animation .scroll{
-    /* border:1px solid red; */
     perspective: 1000px;
     min-height: 50vh;
     width:70%;
     margin:0 auto;
-    background: url("https://images.ctfassets.net/8hsq8bf20c8j/5wDHrMo9lXVSwBFq9aNOpl/387fb5205c612e9562a93b14b580f018/apfa_partnerpage_bqe_header.png");
-    background-attachment: fixed;
-    background-size: cover;
-}
-
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+} */
+/* .scroll-animation .scroll img{
+    object-fit: cover;
+    width:100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+} */
 .section-header{
- text-align:center;
+    text-align:center;
 }
 .section-header .section-title{
     font-size : var(--heading-secondary);
@@ -329,6 +332,7 @@ transform: rotate(45deg);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap:20px;
 }
 
 #pricing .section h2{
@@ -339,17 +343,19 @@ transform: rotate(45deg);
 #pricing .section p{
     font-size:1.6rem;
     color:var(--text-dim);
-    margin-bottom:10px;
+    margin-bottom:5px;
 }
 
 .card{
     position: relative;
-    height: 250px;
+    height: 270px;
     width:450px;
     background:#100877;
     /* border:1px solid red; */
     border-radius: 5px;
     padding:20px;
+
+padding-bottom: 10px;
     color:white;
     /* margin:200px; */
 }
@@ -407,3 +413,221 @@ margin-top:20px;
 .scroll-animation  img{
     border:10px solid grey 
 }
+
+.most_popular{
+    inset:0;
+    /* width:00px; */
+    /* aspect-ratio: 19/6; */
+}
+
+.most_popular img{
+    position: absolute;
+    top:50%;
+    right:-5%;
+    width:150px;
+}
+footer{
+    background:var(--bg-footer);
+    padding: 4rem 10rem;
+
+}
+/* .footer{ */
+    /* display: flex; */
+/* } */
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+footer>div:first-child{
+    width:33%;
+}
+footer>div:not(:first-child){
+    width: 30%;
+    text-align: center;
+}
+
+footer>div:not(:first-child) a{
+    display: inline-block;
+    margin: 1rem 0;
+    color:var(--text-dim)
+}
+
+footer>div:not(:first-child) a:hover {
+    /* display: block; */
+    margin: 1rem 0;
+    color:var(--text-color)
+}
+
+
+/* footer>div:first-child h2{
+    font-size: var(--heading-tertiary);
+    margin-bottom: 1rem;
+} */
+
+.credits{
+    font-size:1.4rem;
+    color:var(--text-dim);
+    margin-top: 2rem;
+    padding:1rem 3rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background:var(--bg-primary);
+    border-radius: var(--radius);
+}
+
+.credits a{
+    display: inline-block;
+    /* margin:1rem; */
+}
+
+
+
+
+
+.scroll-animation img{
+    border:none;
+}
+
+.scroll-animation {
+    perspective: 1000px; /* Adjust the distance for the depth effect */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Adjust based on your design */
+    /* width:400px; */
+    width:70%;
+    margin:auto;
+}
+
+/* 3D transformation on the image */
+.scroll-animation img {
+    width: 100%; /* Adjust based on your design */
+    object-fit: contain;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: transform 0.6s ease;
+}
+
+/* On hover, add some rotation for a better 3D effect */
+.scroll-animation:hover img {
+    transform: rotateX(20deg) rotateY(20deg) translateZ(50px);
+}
+
+@media only screen and (max-width: 900px){
+    .hero{
+        width:100%;
+    }
+    .hero p{
+        width:80%;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .hero{
+        width:100%;
+    }
+    .hero p{
+        width:90%;
+    }
+    #about .section>div{
+        flex-wrap:wrap;
+        /* width:90%; */
+    }
+    #about .section>div:nth-child(odd){
+        flex-wrap: wrap-reverse;
+    }
+    #about .section .img-section, .section .text-section{
+        width:100%;
+    }
+
+    #about .text-section{
+        width:90% !important; 
+    }
+
+    #about .section-child{
+        margin:4rem 0;
+    }
+
+    #about .section {
+        padding: 2rem;
+    }
+
+    #pricing .section{
+        padding: 2rem;
+        flex-wrap: wrap-reverse;
+    }
+    
+    .section-3-main{
+        width:90%;
+    }
+    footer{
+        padding:2rem;
+    }
+    footer>div{
+        width:100% !important;
+    }
+    footer>div:not(:first-child){
+        width: 100%;
+        text-align:left;
+    }
+    footer>div{
+        margin:2rem;
+        text-align: left;
+    }
+    .section-title{
+        /* font-size: var(--heading-tertiary); */
+        width:80% !important;
+        margin:auto;
+    }
+    .decoration{
+        display: none;
+    }
+    /* .scroll-animation{
+        min-height: 50vh;
+    }
+    .scroll{
+        width:100%;
+    }
+    .scroll-animation .scroll img{
+        width:100%;
+    } */
+
+    .scroll-animation{
+        height: 30vh !important;
+    }
+    .scroll-animation img{
+        width:100%;
+    }
+    .scroll-animation{
+    display: none;    
+    }
+    .main-heading{
+        font-size: var(--heading-secondary);
+    }
+    .hero p{
+        font-size: var(--heading-quaternary);
+    }
+    .card{
+        width:100%;
+    }
+    .card-header h2{
+        font-size: 24px;
+
+    }
+    .price h2{
+        font-size: 24px;
+    }
+    .most_popular img{
+        top:50%;
+        /* display: none; */
+    }
+    .section-title{
+        font-size:  24px;
+        width:100%;
+    }
+    .section{
+        width:90%;
+    }
+}   
