@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 html{
     font-size:10px;
 }
@@ -661,4 +663,58 @@ footer>div:not(:first-child) a:hover {
     transform: rotate(0deg) translate(-50%, -50%);
     opacity: 0;
     pointer-events: none;
+}
+
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact main>div{
+    text-align: center;
+
+}
+
+#contact main>div>h2{
+    font-size: var(--heading-main);
+}
+#contact main>div>p{
+    font-size: var(--heading-tertiary);
+}
+#contact main{
+
+    width:50%;
+    margin:4rem auto;
+}
+#contact main form{
+    padding:15px 20px;
+    border-radius: var(--radius);
+    background:var(--section-two-bg);
+    margin:4rem 0;
+    box-shadow: 0px 10px 50px var(--section-three-bg);
+}
+#contact input, #contact textarea{
+    padding:15px 30px;
+    outline:none;
+    border-radius: var(--radius);
+    background:var(--bg-primary);
+    border:0;
+    width:100%;
+    /* margin:1rem 0; */
+    border:1px solid var(--section-three-bg);
+    color:white;
+}
+#contact main form>div{
+    margin:1rem 0;
+}
+#contact main form button{
+    width:100%;
+    padding:10px 30px;
+    /* box-shadow: 0px 2px 10px; */
+}
+#contact main form input:hover, #contact main form textarea:hover,
+#contact main form input:focus, #contact main form textarea:focus{
+    border:1px outset var(--accent-color);
 }
