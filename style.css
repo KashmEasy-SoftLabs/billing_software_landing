@@ -641,7 +641,7 @@ footer>div:not(:first-child) a:hover {
     font-size:10rem;
     color:white;
     background:var(--bg-primary);
-    position: absolute;
+    position: fixed;
     inset:0;
     z-index: 999;
 }
