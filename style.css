@@ -631,3 +631,16 @@ footer>div:not(:first-child) a:hover {
         width:90%;
     }
 }   
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size:10rem;
+    color:white;
+    background:var(--bg-primary);
+    position: absolute;
+    inset:0;
+    z-index: 999;
+}

@@ -113,3 +113,34 @@ billingTexts.forEach((item, index) => {
 //     duration: 1,
 //     opacity: 0
 // })
+
+let loaderText = document.querySelector(".loader .loader-inner");
+
+async function sleep(miliseconds){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, miliseconds);
+    });
+}
+
+window.addEventListener("load",async () => {
+    for(let i = 0; i <= 100; i++){
+        loaderText.innerHTML = `${i}%`;
+        await sleep(20);
+        if(i == 23){
+            await sleep(100);
+        }else if(i == 47){
+            await sleep(500)
+        }
+    }
+    document.querySelector(".loader").style.transition = "all .5s";
+    document.querySelector(".loader").style.transform = "translateY(-100%)";
+    setTimeout(()=>{
+        document.querySelector(".loader").style.display = "none";
+    }, 5000);
+    // document.querySelector("header").style.display = "block";
+    // document.querySelector("main").style.display = "block";
+    // document.querySelector("footer").style.display = "block";
+});
+// document.querySelector(".loader").
